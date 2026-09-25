@@ -216,7 +216,7 @@ docker run --rm -v "$(pwd):/app" -w /app alpine ./my-app
 Hello from Go app!
 2 + 3 = 5
 ```
-![Hello from my Go app!](/content/DevOps/CI_CD/img/6_workflow.png)
+
 
 либо запустить бинарный файл собранного на Go приложения в консоле
 ```shell
@@ -230,8 +230,7 @@ Hello from Go app!
 - Перейдите на вкладку **Actions** в вашем репозитории на **GitHub**. Вы увидите, как ваш **Workflow** запустился, а через несколько минут загорится **зеленая** галочка, которая означает, что все шаги прошли успешно
 - Если ваш **Workflow** стал красным - исправьте ошибки и запуштесь снова
 
-![Скрин](/content/DevOps/CI_CD/img/5_workflow.png)
-
+![alt text](image.png)
 
 ### 11. Проверить сборку Docker-образа локально
 
@@ -241,10 +240,15 @@ Hello from Go app!
 ```shell
 docker build -t my-go-app:latest .
 ```
+
+![alt text](image-1.png)
+
 Создание и запуск контейнера:
 ```shell
 docker run --rm my-go-app:latest
 ```
+
+![alt text](image-2.png)
 
 Вы увидите вывод:
 ```shell
@@ -252,21 +256,5 @@ Hello from Go app!
 2 + 3 = 5
 ```
 
-![Hello from my Go app!](/content/DevOps/CI_CD/img/7_workflow.png)
 
-Опционально вы можете зайти в интерактивный режим контейнера для ознакомления и отладки:
-```shell
-docker run -it --rm my-go-app:latest /bin/sh
-```
-выполнить команду получения ин-фы об используемой в контейнере ОС
-```shell
-cat /etc/os-release
-```
-![Hello from my Go app!](/content/DevOps/CI_CD/img/8_workflow.png)
 
-выйти из контейнра:
-```shell
-exit
-```
-
-> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
